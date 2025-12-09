@@ -2,9 +2,9 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
     font-family: Arial, sans-serif;
 }
-
 
 .container {
     width: 90%;
@@ -13,14 +13,18 @@
 }
 
 header {
-    background-color: #2E86C1;    
+    background-color: #2E86C1;
     color: white;
     padding: 15px 0;
+    position: sticky;       
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
 }
 
 header .container {
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -29,10 +33,12 @@ nav a {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+    transition: 0.3s;         
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #D6EAF8;
+    text-shadow: 0 0 5px white;
 }
 
 
@@ -51,6 +57,13 @@ main .container {
     font-size: 32px;
     color: #1C4966;
     margin-bottom: 20px;
+    animation: fadeIn 1.2s ease-in; 
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .left-column p {
@@ -58,19 +71,22 @@ main .container {
     line-height: 1.5;
 }
 
+
 .button {
     display: inline-block;
-    margin-top: 20px;
-    background-color: #28A745;     
+    background-color: #28A745;
     padding: 12px 20px;
     color: white;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
 .button:hover {
-    background-color: #218838;
+    background-color: #1E7E34;
+    transform: scale(1.05);
 }
 
 
@@ -78,25 +94,14 @@ main .container {
     width: 48%;
 }
 
-.right-column h3 {
-    font-size: 24px;
-    color: #1C4966;
-    margin-bottom: 20px;
-}
-
 
 .card {
-    background-color: #F8F9FA;      
+    background-color: #F8F9FA;
     padding: 20px;
     margin-bottom: 20px;
-    border-left: 5px solid #2E86C1; 
-    border-radius: 6px;
+    border-left: 5px solid #2E86C1;
+    border-radius: 10px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    color: #2E86C1;
 }
 
 
@@ -105,14 +110,24 @@ footer {
     color: white;
     text-align: center;
     padding: 15px 0;
-    margin-top: 40px;
+    margin-top: 480px;
 }
+
 
 footer a {
     color: #AED6F1;
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+
+@media (max-width: 768px) {
+    main .container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+    nav a {
+        margin-left: 10px;
+    }
 }

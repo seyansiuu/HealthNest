@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - HealthNest</title>
+    <link rel="stylesheet" href="HealthNest.css" />
+    <script src="HealthNest.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HealthNest</h1>
+            <nav>
+                <a href="HealthNest.html">Home</a>
+                <a href="services.html">Our Services</a>
+                <a href="team.html">Team</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="loginForm" style="max-width: 420px; margin: 40px auto 60px;">
+                <h2>Member Login</h2>
+
+                <label for="email" style="display:block; margin-top:12px; margin-bottom:6px;">
+                    Email
+                </label>
+                <input id="email" type="email" placeholder="you@example.com" required
+                       style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;" />
+
+                <label for="password" style="display:block; margin-top:12px; margin-bottom:6px;">
+                    Password
+                </label>
+                <input id="password" type="password" placeholder="Password" required
+                       style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;" />
+
+                <button type="submit" class="button" style="width:100%; margin-top:18px;">
+                    Log In
+                </button>
+
+                <p id="loginMessage" style="margin-top:12px; color: #c0392b;"></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HealthNest</p>
+        </div>
+    </footer>
+</body>
+</html>
